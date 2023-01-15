@@ -1,0 +1,219 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+/***************************/
+/******** GENERAL **********/
+/***************************/
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+:root {
+	--bright-orange: hsl(31, 77%, 52%);
+	--dark-cyan: hsl(184, 100%, 22%);
+	--very-dark-cyan: hsl(179, 100%, 13%);
+	--white: hsla(0, 0%, 100%, 0.75);
+	--gray: hsl(0, 0%, 95%);
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background-color: var(--gray);
+	font-family: "Lexend Deca", sans-serif;
+	font-size: 1.5rem;
+	font-weight: 400;
+	overflow: hidden;
+
+	/* display: flex;
+
+	justify-content: center;
+	align-items: center; */
+	display: grid;
+	place-content: center;
+	min-height: 100vh;
+}
+
+/***************************/
+/********* LAYOUT **********/
+/***************************/
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+/***************************/
+/******** SECTION **********/
+/***************************/
+
+.section {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 2.4rem;
+	max-width: 30rem;
+
+	/* padding: 4.8rem; */
+	padding-block: 4.8rem;
+	padding-left: 4.8rem;
+	padding-right: 3.2rem;
+}
+
+.sedans {
+	background-color: var(--bright-orange);
+	border-top-left-radius: 1rem;
+	border-bottom-left-radius: 1rem;
+}
+
+.suvs {
+	background-color: var(--dark-cyan);
+}
+
+.luxury {
+	background-color: var(--very-dark-cyan);
+	border-top-right-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+}
+
+.header {
+	color: var(--gray);
+	font-family: "Big Shoulders Display", cursive;
+	font-size: 3.6rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.description {
+	color: var(--white);
+	line-height: 1.5;
+
+	margin-bottom: 3.2rem;
+}
+
+/***************************/
+/******** BUTTONS **********/
+/***************************/
+
+.btn,
+.btn:link,
+.btn:visited {
+	display: block;
+	background-color: var(--gray);
+	text-decoration: none;
+	padding: 1.6rem 3.2rem;
+	border-radius: 50px;
+	transition: all 0.4s;
+
+	/* max-width: 70%; */
+}
+
+.btn:is(:hover, :active) {
+	/* border: solid 3px var(--gray); */
+	box-shadow: inset 0 0 0 2px var(--gray);
+}
+
+.btn,
+.btn.first:link,
+.btn.first:visited {
+	color: var(--bright-orange);
+}
+
+.btn.first:hover,
+.btn.first:active {
+	color: var(--gray);
+	background-color: var(--bright-orange);
+}
+
+.btn,
+.btn.second:link,
+.btn.second:visited {
+	color: var(--dark-cyan);
+}
+
+.btn.second:hover,
+.btn.second:active {
+	color: var(--gray);
+	background-color: var(--dark-cyan);
+}
+
+.btn,
+.btn.last:link,
+.btn.last:visited {
+	color: var(--very-dark-cyan);
+}
+
+.btn.last:hover,
+.btn.last:active {
+	color: var(--gray);
+	background-color: var(--very-dark-cyan);
+}
+
+/***************************/
+/********* FOOTER **********/
+/***************************/
+
+.attribution {
+	font-size: 1.2rem;
+	text-align: center;
+}
+.attribution a {
+	color: green;
+	text-decoration: none;
+}
+
+.attribution a:hover {
+	text-decoration: underline;
+}
+
+/***************************/
+/********* QUERIES **********/
+/***************************/
+
+/* BELOW 912 px */
+@media (max-width: 57em) {
+	html {
+		font-size: 56.25%;
+	}
+
+	body {
+		margin-block: 6.4rem;
+		overflow-y: visible;
+	}
+
+	.container {
+		flex-direction: column;
+	}
+
+	.sedans {
+		border-bottom-left-radius: 0;
+		border-top-right-radius: 1rem;
+		border-top-left-radius: 1rem;
+	}
+
+	.luxury {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 1rem;
+		border-bottom-left-radius: 1rem;
+	}
+
+	.btn,
+	.btn:is(:link, :visited) {
+		padding-inline: 3.6rem;
+	}
+
+	.description {
+		margin: 0;
+	}
+}
